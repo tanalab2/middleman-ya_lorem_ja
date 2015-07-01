@@ -6,6 +6,8 @@
 module Middleman
   module YaLoremJa
     module Dictionary
+      SENTENCE_END_CHARS = ["？", "。", "！"]
+      
       LINES=<<CONTENTS.split("\n")
 諸君は、東京市某町某番地なる風博士の邸宅を御存じであろう乎？
 御存じない。

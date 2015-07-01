@@ -16,4 +16,5 @@ group :test do
   gem 'fivemat'
   gem 'aruba'
   gem 'rspec'
+  gem 'capybara'
 end

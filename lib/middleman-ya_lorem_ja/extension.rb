@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Extension namespace
 module Middleman
   module YaLoremJa
@@ -31,7 +32,7 @@ module Middleman
       helpers do
         # Access to the Lorem object
         # @return [Middleman::Extensions::Lorem::LoremObject]
-        def lorem
+        def lorem_ja
           YaLoremObjectJa
         end
       end
@@ -61,7 +62,7 @@ module Middleman
 
             wk_word = randm(Dictionary::SENTENCES[result])
             
-            return wk_word.sub(/[？。！]$/, "")
+            return wk_word.sub(/[#{ Dictionary::SENTENCE_END_CHARS.join() }]$/, "")
           end
 
           # Get one placeholder sentence
