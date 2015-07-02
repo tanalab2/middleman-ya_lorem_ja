@@ -2,6 +2,20 @@
 
 Middleman 用の日本語 lorem 拡張を作成したい。
 
+## インストール方法 ##
+
+Gemfile に以下を追加し、"bundle install"してください。
+
+```
+gem "middleman-ya_lorem_ja" , :git => 'git://github.com/tanalab2/middleman-ya_lorem_ja'
+```
+
+あとは、 middleman の config.rb に以下を追加し、 ya_lorem_ja を有効化してください。
+
+``` ruby
+activate :ya_lorem_ja
+```
+
 ## Middleman の lorem のインターフェース ##
 
 Middleman では 標準 extensions で ヘルパーメソッド に lorem メソッドが用意されています。
