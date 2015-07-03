@@ -119,6 +119,8 @@ word は面倒なんので、
   
 
 
-
+## License
+* MIT
+    
 
 
