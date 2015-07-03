@@ -16,6 +16,39 @@ gem "middleman-ya_lorem_ja" , :git => 'git://github.com/tanalab2/middleman-ya_lo
 activate :ya_lorem_ja
 ```
 
+ya_lorem_ja が有効になり、 erb ファイルなどで、
+lorem_ja オブジェクトが使用できるようになります。
+
+erb に以下を記載した場合は、
+
+``` ruby
+<h1><%= lorem_ja.word %></h1>
+<h2><%= lorem_ja.words(5) %></h2>
+<p><%= lorem_ja.sentence %></p>
+<p><%= lorem_ja.sentences(3) %></p>
+<p>
+<%= lorem_ja.paragraph %>
+<%= lorem_ja.paragraphs(3) %>
+</p>
+```
+
+以下のように出力されます。
+
+``` html
+<h1>風博士の遺書</h1>
+<h2>賢明にして正大なること太平洋の如き諸君よ</h2>
+<p>諸君はすでに、正当なる攻撃は一つとして彼の詭計に敵し難い所以を了解せられたに違いない。</p>
+<p>噫呼、それは大変残念である。</p>
+<p>
+それ故僕は唯一の目撃者として、偉大なる風博士の臨終をつぶさに述べたいと思うのである。
+そして諸君は偉大なる風博士を御存知であろうか？
+
+諸君よ、翌日の夜明けを期して、かの憎むべき蛸はついに蛸自体の正体を遺憾なく暴露するに至るであろう！
+
+この珍奇なる部落は、人種、風俗、言語に於て西欧の全人種に隔絶し、実に地球の半廻転を試みてのち、極東じゃぽん国にいたって初めて著しき類似を見出すのである。
+</p>
+```
+
 ## Middleman の lorem のインターフェース ##
 
 Middleman では 標準 extensions で ヘルパーメソッド に lorem メソッドが用意されています。
