@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   # s.authors     = ["Your Name"]
   # s.email       = ["email@example.com"]
   # s.homepage    = "http://example.com"
-  # s.summary     = %q{A short summary of your extension}
+  s.summary     = %q{Yet Another Japanese Lorem Ipsum generator For Middleman}
   # s.description = %q{A longer description of your extension}
 
   s.files         = `git ls-files`.split("\n")
