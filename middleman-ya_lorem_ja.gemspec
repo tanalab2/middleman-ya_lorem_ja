@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "middleman-ya_lorem_ja"
   s.version     =  Middleman::YaLoremJa::VERSION
   s.platform    = Gem::Platform::RUBY
-  # s.authors     = ["Your Name"]
+   s.authors     = ["kenji tanaka"]
   # s.email       = ["email@example.com"]
-  # s.homepage    = "http://example.com"
+  s.homepage    = "https://github.com/tanalab2/middleman-ya_lorem_ja"
   s.summary     = %q{Yet Another Japanese Lorem Ipsum generator For Middleman}
-  # s.description = %q{A longer description of your extension}
+  s.description = %q{Yet Another Japanese Lorem Ipsum generator For Middleman}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
