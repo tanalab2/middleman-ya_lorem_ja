@@ -116,7 +116,8 @@ word は面倒なんので、
 * [坂口安吾「風博士」](http://www.aozora.gr.jp/cards/001095/card42616.html)
 
   文の配列は、青空文庫から拝借しました。
-  
+
+* [middleman-ya_lorem_ja を使用したサンプルページ](http://discountinnovations.com/articles/middleman/lorem_ja.html) 
 
 
 ## License
