@@ -144,13 +144,31 @@ Then /^I should see "([^\"]*)" contents have over "([^\"]*)" chars$/ do |id, cha
   end
 end
 
-Then /^I should see "([^\"]*)" contents have "([^\"]*)" lines$/ do |id, lines|
+Then /^I should see "([^\"]*)" contents have "([^\"]*)" sentences$/ do |id, lines|
+  in_current_dir do
+    elm = page.find_by_id(id)
+    content = elm.native.text
+    line_ary = content.chomp.split("\n")
+    puts "content: #{content} expect lines: #{lines} exact sentences: #{line_ary.length}"
+    expect(line_ary.size).to be >= lines.to_i
+  end
+end
+
+Then /^I should see "([^\"]*)" contents have "([^\"]*)" paragraphs$/ do |id, lines|
   in_current_dir do
     elm = page.find_by_id(id)
     content = elm.native.text
     line_ary = content.chomp.split("\n\n")
-    puts "content: #{content} expect lines: #{lines} exact lines: #{line_ary.length}"
+    puts "content: #{content} expect lines: #{lines} exact paragraphs: #{line_ary.length}"
     expect(line_ary.size).to be >= lines.to_i
+  end
+end
+
+Then /^I should see "([^\"]*)" contents match "(.*)"$/ do |id, regex|
+  in_current_dir do
+    elm = page.find_by_id(id)
+    content = elm.native.text
+    expect(content).to match(/#{ regex }/)
   end
 end
 

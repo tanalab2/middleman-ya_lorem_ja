@@ -6,8 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "middleman-ya_lorem_ja"
   s.version     =  Middleman::YaLoremJa::VERSION
   s.platform    = Gem::Platform::RUBY
-   s.authors     = ["kenji tanaka"]
-  # s.email       = ["email@example.com"]
+  s.authors     = ["kenji tanaka"]
   s.homepage    = "https://github.com/tanalab2/middleman-ya_lorem_ja"
   s.summary     = %q{Yet Another Japanese Lorem Ipsum generator For Middleman}
   s.description = %q{Yet Another Japanese Lorem Ipsum generator For Middleman}
@@ -21,5 +20,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency("middleman-core", [">= 3.3.12"])
   
   # Additional dependencies
-  # s.add_runtime_dependency("gem-name", "gem-version")
+  s.add_runtime_dependency("ya_lorem_ja", ">= 0.0.1")
 end
