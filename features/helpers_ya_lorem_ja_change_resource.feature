@@ -1,7 +1,7 @@
 Feature: Lorem generating helper
 
   Scenario: Lorem Helper
-    Given the Server is running at "test-app"
+    Given the Server is running at "chuumon_no_ooi_ryouriten"
     Then going to "/word.html" should not raise an exception
     Then I should see "#word" contents have over "2" chars
     Then I should see "#words5" contents have over "10" chars
@@ -13,5 +13,9 @@ Feature: Lorem generating helper
     Then I should see "#paragraphs3" contents have "3" paragraphs
     Then I should see "#date" contents match "\d{4}年\d{2}月\d{2}日"    
     Then I should see "#image" contents match "^http://placehold.it/20x20"
-    Then I should see "#resource_name" contents match "kazehakase"
+    Then I should see "#resource_name" contents match "chuumon_no_ooi_ryouriten"
+    
+
+
+    
     

@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency("middleman-core", [">= 3.3.12"])
   
   # Additional dependencies
-  s.add_runtime_dependency("ya_lorem_ja", ">= 0.0.2")
+  s.add_runtime_dependency("ya_lorem_ja", ">= 0.0.3")
 end

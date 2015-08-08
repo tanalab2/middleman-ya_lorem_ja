@@ -2,18 +2,32 @@
 
 Middleman 用の日本語 lorem 拡張です。
 
-## インストール方法 ##
+## Installation
 
-Gemfile に以下を追加し、"bundle install"してください。
+Add this line to your application's Gemfile:
 
-```
-gem "middleman-ya_lorem_ja" , :git => 'git://github.com/tanalab2/middleman-ya_lorem_ja'
-```
+    gem 'middleman-ya_lorem_ja'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install middleman-ya_lorem_ja
+
 
 あとは、 middleman の config.rb に以下を追加し、 ya_lorem_ja を有効化してください。
 
 ``` ruby
 activate :ya_lorem_ja
+```
+
+また、以下により、文章リソースを変更できます。(:resource_nameを指定しない場合は、坂口安吾「風博士」が使用されます。)
+
+```ruby
+# 宮沢賢治「注文の多い料理店」を使用する場合
+activate :ya_lorem_ja, :resource_name => :chuumon_no_ooi_ryouriten
 ```
 
 ya_lorem_ja が有効になり、 erb ファイルなどで、
@@ -22,6 +36,8 @@ lorem_ja オブジェクトが使用できるようになります。
 erb に以下を記載した場合は、
 
 ``` ruby
+<h1><%= lorem_ja.date%></h1>
+<img src="<%= lorem_ja.image('200x200')%>"/>
 <h1><%= lorem_ja.word %></h1>
 <h2><%= lorem_ja.words(5) %></h2>
 <p><%= lorem_ja.sentence %></p>
@@ -35,6 +51,8 @@ erb に以下を記載した場合は、
 以下のように出力されます。
 
 ``` html
+<h1>2001年03月19日</h1>
+<img src="http://placehold.it/200x200"/>
 <h1>風博士の遺書</h1>
 <h2>諸氏よ、誰人かよく蛸を懲す勇士なきや</h2>
 <p>余の妻は麗わしきこと高山植物の如く、実に単なる植物ではなかったのである！</p>
@@ -86,13 +104,6 @@ erb に以下を記載した場合は、
 * [ya_lorem_ja](https://github.com/tanalab2/ya_lorem_ja) 
 
 * [lorem.rb](https://github.com/middleman/middleman/middleman-core/lib/middleman-more/extensions/lorem.rb )
-
-* [坂口安吾「風博士」](http://www.aozora.gr.jp/cards/001095/card42616.html)
-
-  文の配列は、青空文庫から拝借しました。
-
-* [middleman-ya_lorem_ja を使用したサンプルページ](http://discountinnovations.com/articles/middleman/lorem_ja.html) 
-
 
 ## License
 * MIT
