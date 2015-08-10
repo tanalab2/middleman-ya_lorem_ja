@@ -101,9 +101,10 @@ erb に以下を記載した場合は、
 
 ## 参考 ##
 
-* [ya_lorem_ja](https://github.com/tanalab2/ya_lorem_ja) 
-
-* [lorem.rb](https://github.com/middleman/middleman/middleman-core/lib/middleman-more/extensions/lorem.rb )
+* [tanalab2/ya_lorem_ja](https://github.com/tanalab2/ya_lorem_ja) 
+* [middleman-ya_lorem_jaの使い方](http://discountinnovations.com/articles/middleman/03.html)
+* [日本語 Lorem サンプル(風博士 版)](http://discountinnovations.com/articles/middleman/lorem_ja.html)
+* [日本語 Lorem サンプル(注文の多い料理店 版)](http://discountinnovations.com/articles/middleman/lorem_ja_chuumon_no_ooi_ryouriten.html) 
 
 ## License
 * MIT
