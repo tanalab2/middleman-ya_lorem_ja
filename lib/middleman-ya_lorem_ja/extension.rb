@@ -57,6 +57,16 @@ module Middleman
             @@singleton__instance__  = nil if @@singleton__instance__           
           }
         end
+
+        def paragraph
+          self.paragraphs(1)
+        end
+
+        def paragraphs(total, opts={  })
+          default_options = { start_sep: "<p>", end_sep: "</p>" }
+          merged_opts = default_options.merge(opts)
+          super(total, merged_opts)
+        end
         
         private
         def initialize(resource_name, char_count_range, word_count_range, sentence_count_range)
