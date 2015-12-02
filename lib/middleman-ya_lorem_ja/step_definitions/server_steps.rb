@@ -33,7 +33,6 @@ end
 Given /^the Server is running$/ do
   root_dir = File.expand_path(current_dir)
 
-
   if File.exists?(File.join(root_dir, 'source'))
     ENV['MM_SOURCE'] = 'source'
   else
@@ -76,7 +75,7 @@ end
 
 Then /^going to "([^\"]*)" should not raise an exception$/ do |url|
   cd('.') do
-    
+
     expect{ visit(URI.encode(url).to_s) }.to_not raise_exception
   end
 end
@@ -171,4 +170,3 @@ Then /^I should see "([^\"]*)" contents match "(.*)"$/ do |id, regex|
     expect(content).to match(/#{ regex }/m)
   end
 end
-

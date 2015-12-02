@@ -46,15 +46,25 @@ module Middleman
         def self.instance(resource_name=DEFAULT_RESOURCE_NAME, char_count_range=DEFAULT_CHAR_COUNT_RANGE_IN_WORD, word_count_range=DEFAULT_WORD_COUNT_RANGE_IN_SENTENCE, sentence_count_range=DEFAULT_SENTENCE_COUNT_RANGE_IN_PARAGRAPH)
           return @@singleton__instance__ if @@singleton__instance__
           @@singleton__mutex__.synchronize {
-            return @@singleton__instance__ if @@singleton__instance__           
+            return @@singleton__instance__ if @@singleton__instance__
             @@singleton__instance__ = new(resource_name, char_count_range, word_count_range, sentence_count_range)
           }
           @@singleton__instance__
         end
 
+        def self.reload_resource(resource_name=DEFAULT_RESOURCE_NAME, char_count_range=DEFAULT_CHAR_COUNT_RANGE_IN_WORD, word_count_range=DEFAULT_WORD_COUNT_RANGE_IN_SENTENCE, sentence_count_range=DEFAULT_SENTENCE_COUNT_RANGE_IN_PARAGRAPH)
+          @@singleton__mutex__.synchronize {
+            if @@singleton__instance__ == nil
+              @@singleton__instance__ = new(resource_name, char_count_range, word_count_range, sentence_count_range)
+            else
+              @@singleton__instance__.reload_resource(resource_name, char_count_range, word_count_range, sentence_count_range)
+            end
+          }
+        end
+
         def self.reset_instance
           @@singleton__mutex__.synchronize {
-            @@singleton__instance__  = nil if @@singleton__instance__           
+            @@singleton__instance__  = nil if @@singleton__instance__
           }
         end
 
@@ -67,7 +77,7 @@ module Middleman
           merged_opts = default_options.merge(opts)
           super(total, merged_opts)
         end
-        
+
         private
         def initialize(resource_name, char_count_range, word_count_range, sentence_count_range)
           super(resource_name, char_count_range, word_count_range, sentence_count_range)
@@ -93,4 +103,4 @@ end
 # version of class name
 
 # MyExtension.register(:my_extension)
-::Middleman::YaLoremJa::Extension.register(::Middleman::YaLoremJa::Extension::EXTENSION_NAME) 
+::Middleman::YaLoremJa::Extension.register(::Middleman::YaLoremJa::Extension::EXTENSION_NAME)
